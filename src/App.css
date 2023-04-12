@@ -1,0 +1,35 @@
+.App {
+  width: 100%;
+  height: 100%;
+  background-color: #222 ;
+}
+
+.chess-board {
+  width: 40vw;
+  height: 40vw;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: grid;
+  grid-template-columns: repeat(8, auto);
+  grid-template-rows: repeat(8, auto);
+  gap: 1px;
+
+  background-color: #333;
+}
+
+.chess-pallet {
+  width: auto;
+  height: auto;
+  background-color: burlywood;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chess-pallet:nth-child(2n) {
+  background-color:darkgoldenrod;
+}
