@@ -5,31 +5,24 @@
 }
 
 .chess-board {
-  width: 40vw;
-  height: 40vw;
+  width: min(80vh, 80vw);
+  height: min(80vh, 80vw);
   position:absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   display: grid;
-  grid-template-columns: repeat(8, auto);
-  grid-template-rows: repeat(8, auto);
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  align-items: center;
+  justify-items: center;
   gap: 1px;
 
-  background-color: #333;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Chessboard480.svg/480px-Chessboard480.svg.png?20210611221915);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.chess-pallet {
-  width: auto;
-  height: auto;
-  background-color: burlywood;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.chess-pallet:nth-child(2n) {
-  background-color:darkgoldenrod;
-}
