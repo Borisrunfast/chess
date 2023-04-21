@@ -4,20 +4,15 @@
   background-color: #222 ;
 }
 
+
 .chess-board {
   width: min(80vh, 80vw);
   height: min(80vh, 80vw);
-  position:absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  align-items: center;
-  justify-items: center;
-  gap: 1px;
 
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Chessboard480.svg/480px-Chessboard480.svg.png?20210611221915);
   background-repeat: no-repeat;
@@ -26,3 +21,43 @@
 
 
 
+
+
+
+.wp {
+  background-image: url(/ChessPieces/wp.png);
+}
+.wk {
+  background-image: url(/ChessPieces/wk.png);
+}
+.wq {
+  background-image: url(/ChessPieces/wq.png);
+}
+.wr {
+  background-image: url(/ChessPieces/wr.png);
+}
+.wn {
+  background-image: url(/ChessPieces/wn.png);
+}
+.wb {
+  background-image: url(/ChessPieces/wb.png);
+}
+
+.bp {
+  background-image: url(/ChessPieces/bp.png);
+}
+.bk {
+  background-image: url(/ChessPieces/bk.png);
+}
+.bq {
+  background-image: url(/ChessPieces/bq.png);
+}
+.br {
+  background-image: url(/ChessPieces/br.png);
+}
+.bn {
+  background-image: url(/ChessPieces/bn.png);
+}
+.bb {
+  background-image: url(/ChessPieces/bb.png);
+}
