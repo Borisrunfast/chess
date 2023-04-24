@@ -1,5 +1,5 @@
 
-export default function buildBoard() {
+function buildBoard() {
     let board = []
     for (let i = 0; i < 8; i++) {
         board.push([])
@@ -35,3 +35,20 @@ export default function buildBoard() {
 
     return board
 }
+
+function updateBoard(oldBoard) {
+    let newBoard = []
+    for (let x = 0; x < 8; x++) {
+        newBoard.push([])
+        for(let y = 0; y < 8; y++) {
+            try {newBoard[x].push(oldBoard[x][y].props.piece? oldBoard[x][y].props.piece : oldBoard[x][y])}
+            catch {
+                newBoard[x].push(oldBoard[x][y])
+            }
+        }
+    }
+
+    return newBoard
+}
+
+export {buildBoard, updateBoard}
