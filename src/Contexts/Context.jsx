@@ -1,12 +1,9 @@
 import { createContext, useContext } from "react"
 
-const context = createContext()
+export const context = createContext()
 
 
-function useAppContext() {
-    
+export function useAppContext() {
     
     return useContext(context)
 }
-
-export default context

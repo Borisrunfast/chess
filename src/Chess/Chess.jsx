@@ -1,21 +1,24 @@
 import React, { useRef, useState } from "react"
 import { buildBoard, updateBoard } from './board'
-import './Pieces.css'
+import { useAppContext }  from '../Contexts/Context'
+import { makeNewMove } from "../Reducer/action/move"
 import Piece from "./Piece"
-
+import './Pieces.css'
 
 function Chess() {
-    const [state, setState] = useState(buildBoard())
+    const {chessState, dispach} = useAppContext()
+
+    const currentBoard = chessState.position[chessState.position.length - 1]
+
     const ref = useRef()
-    // Chess Board Declarations:
-    const board = state
+
 
     // Builds the board it self
     for (let x = 0; x < 8; x++) {
         for(let y = 0; y < 8; y++) {
-            const pimpel = findPiece(board[x][y])
-            board[x][y] ?
-            board[x][y] = 
+            const pimpel = findPiece(currentBoard[x][y])
+            currentBoard[x][y] ?
+            currentBoard[x][y] = 
                 <Piece 
                     key={`${x}${y}`} 
                     piece={pimpel} 
@@ -37,7 +40,7 @@ function Chess() {
 
 
     function DragDrop(e) {
-        const newBoard = updateBoard(state)
+        const newBoard = updateBoard(currentBoard)
         const {x, y} = clacBoardCordinates(e)
 
         const [piece, px, py] = e.dataTransfer.getData('text').split(',')
@@ -45,7 +48,7 @@ function Chess() {
         newBoard[Number(px)][Number(py)] = ''
         newBoard[x][y] = piece
 
-        setState(newBoard)
+        dispach(makeNewMove(newBoard))
     }
 
 
@@ -59,7 +62,7 @@ function Chess() {
 
     return ( 
         <div ref={ref} onDragOver={DragOver} onDrop={DragDrop} className="chess-board" >
-            {board}
+            {currentBoard}
         </div>
      )
 }
