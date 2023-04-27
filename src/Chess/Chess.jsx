@@ -22,7 +22,7 @@ function Chess() {
                 <Piece 
                     key={`${x}${y}`} 
                     piece={pimpel} 
-                    position={{x, y}}/> :
+                    tile={{x, y}}/> :
             null
         }
     }
@@ -44,11 +44,13 @@ function Chess() {
         const {x, y} = clacBoardCordinates(e)
 
         const [piece, px, py] = e.dataTransfer.getData('text').split(',')
-        
-        newBoard[Number(px)][Number(py)] = ''
-        newBoard[x][y] = piece
 
-        dispach(makeNewMove(newBoard))
+        if (chessState.playerMoves?.find(t => t[0] === x && t[1] === y)) {
+            newBoard[Number(px)][Number(py)] = ''
+            newBoard[x][y] = piece
+            dispach(makeNewMove(newBoard)) 
+        }    
+        
     }
 
 

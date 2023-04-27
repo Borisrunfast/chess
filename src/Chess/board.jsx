@@ -9,10 +9,10 @@ function buildBoard() {
     }
 
 
-    for(let i = 0; i < 8; i++) {
-        board[1][i] = 'bp'
-        board[6][i] = 'wp'
-    }
+    //for(let i = 0; i < 8; i++) {
+        //board[1][i] = 'bp'
+        //board[6][i] = 'wp'
+    //}
 
 
     board[7][0] = 'wr'

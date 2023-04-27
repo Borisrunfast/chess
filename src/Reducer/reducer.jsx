@@ -16,6 +16,13 @@ function reducer(state, action) {
                 position
             }
         }
+        case 'GENERATE_PLAYER_MOVES': {
+            
+            return {
+                ...state,
+                playerMoves: action.payload.playerMoves
+            }
+        }
             
             default: state
     }
