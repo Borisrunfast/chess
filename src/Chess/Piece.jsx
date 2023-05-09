@@ -9,7 +9,6 @@ function Piece({piece, tile}) {
     const {turn, position} = chessState
     const currentPosition = position[position.length - 1]
 
-
     function DragStart(e) {
 
         e.dataTransfer.effectAllowed = 'move'
@@ -21,6 +20,7 @@ function Piece({piece, tile}) {
             const playerMoves = arbiter.getRegularMoves({position:currentPosition, piece, tile})
             
             dispach(generatePlayerMoves({playerMoves}))
+            
         }
     }
 

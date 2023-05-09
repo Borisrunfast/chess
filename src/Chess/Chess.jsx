@@ -38,7 +38,6 @@ function Chess() {
         e.preventDefault()
     }
 
-
     function DragDrop(e) {
         const newBoard = updateBoard(currentBoard)
         const {x, y} = clacBoardCordinates(e)
@@ -52,7 +51,6 @@ function Chess() {
         }    
         
     }
-
 
     function clacBoardCordinates(e) {
         const {width, left, top} = ref.current.getBoundingClientRect()
